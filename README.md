@@ -1,0 +1,2 @@
+# YazarUygulamasi_client
+YazarUygulamasi_client
