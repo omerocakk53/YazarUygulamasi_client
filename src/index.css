@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Genel Stil */
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+}
+
+.anadiv {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Home Stili */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer Stili */
+footer {
+    position: relative;
+    bottom: -15px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 0;
+    box-shadow: 0 0 20px rgb(209, 209, 209);
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 5rem;
+    padding-top: 10px;
+    transition-duration: 0.20s;
+}
+
+footer .social-icons a {
+    text-decoration: none;
+    color: rgb(209, 209, 209);
+    transition-duration: 0.20s;
+}
+
+footer .social-icons a .ins:hover {
+    scale: 1.1;
+    transition-duration: 0.20s;
+    color: rgb(247, 0, 255);
+}
+
+footer .social-icons a .tw:hover {
+    scale: 1.1;
+    transition-duration: 0.20s;
+    color: rgb(0, 0, 0);
+}
+
+footer .social-icons a .lin:hover {
+    scale: 1.1;
+    transition-duration: 0.20s;
+    color: rgb(0, 4, 255);
+}
+
+
+/* Genel Navbar Stili */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0 10px 0;
+    z-index: 100;
+    box-shadow: 0 0 20px rgb(209, 209, 209);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.navbar-brand .nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item .nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.nav-item .nav-link:hover {
+   color: rgba(255, 255, 255, 0.462);
+}
+
+/* Menü Toggle (Mobil Menü) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgb(209, 209, 209);
+}
+
+/* Overlay (Menü Açıldığında Arka Plan) */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 51px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        padding: 25px 0;
+        box-shadow: 0 20px 20px rgba(72, 72, 72, 0.579);
+        scale: 0;
+        transition-duration: 0.2s;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .nav-list.open {
+        scale: 1;
+        transition-duration: 0.2s;
+
+    }
+
+    .menu-toggle {
+        display: block;
+        padding-right: 30px;
+    }
+
+    /* Overlay Animasyonu */
+    .overlay.active {
+        display: block;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
